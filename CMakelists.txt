@@ -1,0 +1,19 @@
+
+#该项目的名称是main
+PROJECT(main)
+
+#限定了CMake的最低版本
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+
+#将当前源目录中的源文件名称赋值给第二个参数
+AUX_SOURCE_DIRECTORY(. DIR_SRCS)
+
+#文件编译成一个main的可执行文件
+ADD_EXECUTABLE(main ${DIR_SRCS})
+
+# 查找链接库和头文件
+find_package( OpenCV REQUIRED )
+
+#添加链接库
+target_link_libraries( main ${OpenCV_LIBS} )
+

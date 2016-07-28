@@ -27,3 +27,8 @@
 *.exe
 *.out
 *.app
+
+_build/
+.vscode/
+results/
+Debug/
